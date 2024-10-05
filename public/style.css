@@ -2,9 +2,9 @@
 :root {
   --color-white: #fff;
   --color-light: #f4f4f4;
-  --color-dark: #525252;
+  --color-dark: #d5bbbb;
   --color-black: #141415;
-  --color-primary: #f24e1e;
+  --color-primary: #22926e;
   --color-primary-light: hsl(14, 89%, 53%, 12%);
   --color-success: #29f5a6;
   --color-warning: #ffce31;
@@ -195,6 +195,10 @@ nav .container ul {
   height: 100%;
 }
 
+.dark-gray-text {
+  color: #4a4a4a; /* Dark gray color */
+}
+
 nav .container ul li a {
   height: 100%;
   width: 7rem;
@@ -202,8 +206,18 @@ nav .container ul li a {
   justify-content: center;
   align-items: center;
   color: var(--color-black);
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   position: relative;
   transition: var(--transition);
+  
+  
+}
+nav .container ul li a[href="#effect"] {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 1.8rem; /* Adjusting the padding for more space */
+  padding-right: 1.8rem; /* Adjusting the padding for more space */
 }
 
 nav .container ul li a:hover {
