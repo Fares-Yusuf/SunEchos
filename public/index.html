@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,25 +7,25 @@
     <title>Sun Echos</title>
     <!-- MATERIAL ICONS CDN -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
+
     <!-- MONTSERRAT -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
     <!-- ICONSCOUT CDN -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
+
     <!-- SWIPER JS -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
     <!-- STYLESHEET -->
     <link rel="stylesheet" href="./style.css">
 </head>
-
 <body>
     <nav>
         <div class="container">
-            <a href="#">
-                <h3>Sun Echos</h3>
-            </a>
+            <a href="#"><h3>Sun Echos</h3></a>
             <ul>
                 <li><a href="#" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -39,16 +38,16 @@
             <button id="close-btn"><span class="material-icons-sharp">close</span></button>
         </div>
     </nav>
-
     <!-- ============================ END OF NAVBAR ==========================-->
 
     <section class="landing">
         <div class="container">
+            
+
             <div class="info">
                 <h1>Explore the Butterfly Effect on Earth's Systems</h1>
                 <h3>Small Changes, Big Impacts</h3>
-                <p>Learn how minor events like a butterfly's flap can lead to drastic changes in Earth’s environment,
-                    fueled by interconnected systems, climate shifts, and natural events.</p>
+                <p>Learn how minor events like a butterfly's flap can lead to drastic changes in Earth’s environment, fueled by interconnected systems, climate shifts, and natural events.</p>
                 <a href="#contact" class="btn btn-primary">Get Involved</a>
             </div>
 
@@ -65,31 +64,131 @@
             </div>
         </div>
     </section>
-
     <!-- ============================ END OF LANDING ============================-->
+
+    <section class="about" id="about">
+        <h1>What is the Butterfly Effect?</h1>
+        <div class="container">
+            <div class="image">
+                <img src="./images/butterfly.jpg" alt="Butterfly Effect">
+            </div>
+            <div class="info">
+                <p>The Butterfly Effect is a concept from chaos theory that suggests small causes can have large effects. The name comes from the idea that a butterfly flapping its wings could theoretically cause a typhoon halfway across the world. In the context of Earth’s interconnected systems, seemingly minor changes in one system can lead to significant outcomes in another.</p>
+                <p>For example, a slight increase in atmospheric CO2 can trigger complex feedback loops involving rising temperatures, melting glaciers, and higher sea levels, which in turn affect ecosystems and human livelihoods across the planet.</p>
+            </div>
+        </div>
+    </section>
+    <!-- ============================ END OF ABOUT =============================-->
 
     <section class="effect" id="effect">
         <h1>How Does the Butterfly Effect Happen?</h1>
         <div class="container">
             <div class="info">
-                <p>Use the slider below to simulate a temperature increase and see how small changes in solar energy
-                    affect wildfires, air quality, and health.</p>
-                <input type="range" id="temperature-slider" min="1" max="5" value="1">
-                <p>Temperature Change: <span id="temperature-value">1°C</span></p>
-                <div id="effect-results">
-                    <!-- The results of the API request will be shown here -->
-                </div>
+                <p>The Butterfly Effect manifests in the following ways:</p>
+                <ul>
+                    <li><strong>Atmosphere:</strong> Small temperature changes can influence global weather patterns, triggering storms, droughts, or wildfires.</li>
+                    <li><strong>Oceans:</strong> A rise in ocean temperatures can disrupt marine ecosystems, intensify storms, and contribute to sea level rise.</li>
+                    <li><strong>Land:</strong> Deforestation in one region can reduce biodiversity, alter climate patterns, and increase desertification in other regions.</li>
+                </ul>
+                <p>Understanding these ripple effects is key to predicting and mitigating the impacts of climate change.</p>
             </div>
         </div>
     </section>
-
     <!-- ============================ END OF BUTTERFLY EFFECT =============================-->
+
+    <section class="data" id="data">
+      <h1>NASA Data and Visualizations</h1>
+      <div class="container">
+          <div class="data-visualizations">
+              <h3>Real-Time Data from NASA</h3>
+              <p>Our project leverages NASA's Earth-observing satellite data to visualize the Butterfly Effect in action. Explore key data on air quality, ocean temperatures, land use, and more to understand how small shifts in one system create larger impacts across the planet.</p>
+              
+              <!-- Visualization Cards -->
+              <div class="visualization-card">
+                  <img src="./images/co2-visualization.jpg" alt="CO2 Levels">
+                  <div class="visualization-content">
+                      <h4>CO2 Levels & Global Warming</h4>
+                      <p>See how small increases in CO2 are fueling global warming and shifting weather patterns across the globe.</p>
+                  </div>
+              </div>
+  
+              <div class="visualization-card">
+                  <img src="./images/sea-level.jpg" alt="Sea Levels">
+                  <div class="visualization-content">
+                      <h4>Sea Level Rise</h4>
+                      <p>Track how rising ocean temperatures are accelerating the melting of ice caps and causing coastal flooding.</p>
+                  </div>
+              </div>
+  
+              <div class="visualization-card">
+                  <img src="./images/forest.jpg" alt="Deforestation">
+                  <div class="visualization-content">
+                      <h4>Deforestation</h4>
+                      <p>Explore the cascading effects of deforestation on biodiversity and climate stability.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+    <!-- ============================ END OF DATA =============================-->
+
+    <section class="team" id="team">
+      <h1>Meet Our Team</h1>
+      <div class="container">
+          <a href="https://www.linkedin.com/in/lulwa-almuraisi-98373a253/" target="_blank" class="team-member">
+              <img src="./images/team1.jpg" alt="Team Member">
+              <h3>Lulwa Almuraisi</h3>
+              <p>Senior Electrical Engineering student at Bahrain Polytechnic, with a strong focus on innovative solutions and practical applications in the field.</p>
+          </a>
+          <a href="https://www.linkedin.com/in/ShooqJanahi" target="_blank" class="team-member">
+              <img src="./images/team2.jpg" alt="Team Member">
+              <h3>Shooq Janahi</h3>
+              <p>Senior Programming student at Bahrain Polytechnic, passionate about developing innovative software solutions and exploring cutting-edge technologies.</p>
+          </a>
+          <a href="https://www.linkedin.com/in/batool-isa-768237240/" target="_blank" class="team-member">
+              <img src="./images/team3.jpg" alt="Team Member">
+              <h3>Batool Isa</h3>
+              <p>Senior Programming student at Bahrain Polytechnic, focused on developing innovative software solutions and enhancing user experiences through technology.</p>
+          </a>
+          <a href="https://www.linkedin.com/in/lena-garcia" target="_blank" class="team-member">
+            <img src="./images/team3.jpg" alt="Team Member">
+            <h3>Mohammed Aljazeeri</h3>
+            <p>2nd-year Bachelor of Mechanical Engineering student at Bahrain Polytechnic, currently pursuing a diploma in Full Stack development at Reboot, blending technical engineering expertise with cutting-edge programming skills.</p>
+        </a>
+
+        <a href="https://www.linkedin.com/in/fares-yusuf/" target="_blank" class="team-member">
+          <img src="./images/team3.jpg" alt="Team Member">
+          <h3>Fares Yusuf</h3>
+          <p>2nd-year Bachelor of Mechanical Engineering student at Bahrain Polytechnic, currently pursuing a diploma in Full Stack development at Reboot, blending technical engineering expertise with cutting-edge programming skills.</p>
+      </a>
+
+
+        
+      </div>
+  </section>
+  
+    <!-- ============================ END OF TEAM =============================-->
+
+    <section class="contact" id="contact">
+        <div class="overlay">
+          <div class="container">
+            <h1>Get Involved</h1>
+            <p>Join our efforts to understand and mitigate the Butterfly Effect on Earth’s systems. Sign up to receive newsletters, updates, and opportunities to contribute to our research.</p>
+            <form action="https://formspree.io/f/mjvlbvgo" method="POST">
+              <input type="text" name="Name" placeholder="Name" required>
+              <input type="email" name="Email" placeholder="Email" required>
+              <textarea name="Message" placeholder="Message" required></textarea>
+              <input type="submit" value="Subscribe" class="btn btn-primary">
+            </form>
+          </div>
+        </div>
+    </section>
+    <!-- ============================ END OF GET INVOLVED =============================-->
 
     <footer>
         <div class="container">
-            <a href="#">
-                <h3>Sun Echos</h3>
-            </a>
+            <a href="#"><h3>Sun Echos</h3></a>
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -98,6 +197,7 @@
                 <li><a href="#team">Team</a></li>
                 <li><a href="#contact">Get Involved</a></li>
             </ul>
+           
         </div>
         <div class="copyright">
             &copy; 2024 Sun Echos
@@ -108,5 +208,4 @@
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="./main.js"></script>
 </body>
-
 </html>
