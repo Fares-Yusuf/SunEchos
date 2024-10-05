@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sun Echos</title>
+    <!-- MATERIAL ICONS CDN -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
+    <!-- MONTSERRAT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- ICONSCOUT CDN -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
+    <!-- SWIPER JS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <a href="#">
+                <h3>Sun Echos</h3>
+            </a>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#effect">Butterfly Effect</a></li>
+                <li><a href="#data">Data</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Get Involved</a></li>
+            </ul>
+            <button id="menu-btn"><span class="material-icons-sharp">menu</span></button>
+            <button id="close-btn"><span class="material-icons-sharp">close</span></button>
+        </div>
+    </nav>
+
+    <!-- ============================ END OF NAVBAR ==========================-->
+
+    <section class="landing">
+        <div class="container">
+            <div class="info">
+                <h1>Explore the Butterfly Effect on Earth's Systems</h1>
+                <h3>Small Changes, Big Impacts</h3>
+                <p>Learn how minor events like a butterfly's flap can lead to drastic changes in Earth’s environment,
+                    fueled by interconnected systems, climate shifts, and natural events.</p>
+                <a href="#contact" class="btn btn-primary">Get Involved</a>
+            </div>
+
+            <div class="profile-area">
+                <div class="outer-circle">
+                    <span class="material-icons-sharp">nature</span>
+                    <span class="material-icons-sharp">public</span>
+                    <span class="material-icons-sharp">eco</span>
+                    <span class="material-icons-sharp">cloud</span>
+                </div>
+                <div class="inner-circle">
+                    <img src="./images/earth.jpg" alt="Earth Image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================ END OF LANDING ============================-->
+
+    <section class="effect" id="effect">
+        <h1>How Does the Butterfly Effect Happen?</h1>
+        <div class="container">
+            <div class="info">
+                <p>Use the slider below to simulate a temperature increase and see how small changes in solar energy
+                    affect wildfires, air quality, and health.</p>
+                <input type="range" id="temperature-slider" min="1" max="5" value="1">
+                <p>Temperature Change: <span id="temperature-value">1°C</span></p>
+                <div id="effect-results">
+                    <!-- The results of the API request will be shown here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================ END OF BUTTERFLY EFFECT =============================-->
+
+    <footer>
+        <div class="container">
+            <a href="#">
+                <h3>Sun Echos</h3>
+            </a>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#effect">Butterfly Effect</a></li>
+                <li><a href="#data">Data</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Get Involved</a></li>
+            </ul>
+        </div>
+        <div class="copyright">
+            &copy; 2024 Sun Echos
+        </div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>
