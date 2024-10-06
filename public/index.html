@@ -120,7 +120,7 @@
           <div class="video-wrapper">
             <!-- Replace the source with your video URL -->
             <video controls>
-              <source src="path-to-your-video.mp4" type="video/mp4">
+              <source src="images/SunEchosVideo.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
           </div>
@@ -222,6 +222,27 @@
     </section>
 
     <!-- ============================ END OF BUTTERFLY EFFECT =============================-->
+
+
+    <!-- Chatbot Integration -->
+<div id="chatbot-container"></div>
+<script>
+  window.onload = function() {
+    var iframe = document.createElement('iframe');
+    iframe.src = "https://console.dialogflow.com/api-client/demo/embedded/083ec82a-675d-4d6b-90bf-3ee1cce9d3a8";
+    iframe.style.width = "350px"; /* Adjust width */
+    iframe.style.height = "500px"; /* Adjust height */
+    iframe.style.position = "fixed";
+    iframe.style.bottom = "20px";
+    iframe.style.right = "20px";
+    iframe.style.border = "none";
+    iframe.style.borderRadius = "10px"; /* Rounded edges */
+    iframe.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.1)";
+    document.getElementById('chatbot-container').appendChild(iframe);
+  }
+</script>
+
+<!--End of chatbot section-->
 
     <footer>
         <div class="container">

@@ -1110,3 +1110,15 @@ footer .copyright {
 .video-info p {
   margin-bottom: 15px;
 }
+
+/*----------------*/
+#chatbot-container {
+  width: 400px;
+  height: 600px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}

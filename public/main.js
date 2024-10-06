@@ -104,3 +104,5 @@ slider.addEventListener("input", async function () {
         effectResults.innerHTML = "<p>Failed to load ripple effects.</p>";
     }
 });
+
+
