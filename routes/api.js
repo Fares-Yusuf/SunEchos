@@ -48,7 +48,7 @@ router.post("/air-quality", async (req, res) => {
         // Log the entire air quality response for debugging and clarity
         let airQuality = airQualityResponse.data;
         console.log(
-            "Air Quality Full Response:",
+            "The air Quality Full Response:",
             JSON.stringify(airQuality, null, 2)
         );
 
