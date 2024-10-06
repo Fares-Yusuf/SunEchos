@@ -43,18 +43,18 @@ navItems.forEach((item) => {
     });
 });
 
-// read more about
-const readMoreBtn = document.querySelector(".read-more");
-const readMoreContent = document.querySelector(".read-more-content");
+// // read more about
+// const readMoreBtn = document.querySelector(".read-more");
+// const readMoreContent = document.querySelector(".read-more-content");
 
-readMoreBtn.addEventListener("click", () => {
-    readMoreContent.classList.toggle("show-content");
-    if (readMoreContent.classList.contains("show-content")) {
-        readMoreBtn.textContent = "Show less";
-    } else {
-        readMoreBtn.textContent = "Show more";
-    }
-});
+// readMoreBtn.addEventListener("click", () => {
+//     readMoreContent.classList.toggle("show-content");
+//     if (readMoreContent.classList.contains("show-content")) {
+//         readMoreBtn.textContent = "Show less";
+//     } else {
+//         readMoreBtn.textContent = "Show more";
+//     }
+// });
 
 // show/hide skills items
 const skillItems = document.querySelectorAll("section.skills .skill");
@@ -83,7 +83,10 @@ const effectResults = document.getElementById("effect-results");
 slider.addEventListener("input", async function () {
     const tempChange = slider.value;
     temperatureValue.textContent = `${tempChange}°C`;
-
+    if (tempChange === "0") {
+        effectResults.innerHTML = "";
+        return;
+    }
     // Fetch ripple effect data from the API
     try {
         const response = await fetch(`/api/solar-effect?temp=${tempChange}`);
@@ -130,7 +133,13 @@ map.on("click", function (e) {
         marker = L.marker(e.latlng).addTo(map);
     }
 });
+// Update the displayed value when the slider changes
+const wildfireSlider = document.getElementById("wildfire-percentage");
+const wildfireValue = document.getElementById("wildfire-value");
 
+wildfireSlider.addEventListener("input", function () {
+    wildfireValue.textContent = `${wildfireSlider.value}%`;
+});
 let currentAirQuality = null; // To store the current air quality (before change)
 let simulatedAirQuality = null; // To store the simulated air quality (after change)
 
@@ -146,7 +155,7 @@ document
             "wildfire-percentage"
         ).value; // Get the wildfire percentage
 
-        // Step 1: Fetch the current air quality (before)
+        // Fetch air quality data from the backend
         try {
             const response = await fetch("/api/air-quality", {
                 method: "POST",
@@ -156,40 +165,26 @@ document
                 body: JSON.stringify({
                     lat: lat,
                     lon: lon,
-                    wildfireRiskPercentage: 0, // Use 0 for the "before" state (no wildfire effect)
+                    wildfireRiskPercentage: wildfireRiskPercentage, // Send the entered wildfire risk percentage
                 }),
             });
 
             const data = await response.json();
-            currentAirQuality = data.airQuality;
 
-            // Step 2: Fetch the simulated air quality (after)
-            const afterResponse = await fetch("/api/air-quality", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    lat: lat,
-                    lon: lon,
-                    wildfireRiskPercentage: wildfireRiskPercentage, // Use the entered wildfire risk percentage
-                }),
-            });
-
-            const afterData = await afterResponse.json();
-            simulatedAirQuality = afterData.airQuality;
+            // Extract the current and simulated air quality values
+            const currentAirQuality = data.currentAirQuality;
+            const simulatedAirQuality = data.simulatedAirQuality;
 
             // Step 3: Display both before and after values
             document.getElementById("locationResult").innerHTML = `
-        <h3>Air Quality Data:</h3>
-        <ul>
-            <li><strong>Latitude:</strong> ${lat}</li>
-            <li><strong>Longitude:</strong> ${lon}</li>
-            <li><strong>Current Air Quality (Before):</strong> ${currentAirQuality}</li>
-            <li><strong>Simulated Air Quality (After):</strong> ${simulatedAirQuality}</li>
-            <li><strong>Wildfire Risk Level:</strong> ${wildfireRiskPercentage}%</li>
-        </ul>
-    `;
+            <h3>Air Quality Data:</h3>
+            <ul>
+                <li><strong>Latitude:</strong> ${lat}</li>
+                <li><strong>Longitude:</strong> ${lon}</li>
+                <li><strong>Current Air Quality (Before):</strong> ${currentAirQuality}</li>
+                <li><strong>Simulated Air Quality (After):</strong> ${simulatedAirQuality}</li>
+            </ul>
+        `;
         } catch (error) {
             console.error("Error fetching data:", error);
             document.getElementById("locationResult").innerHTML =

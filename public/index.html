@@ -114,8 +114,8 @@
             <div class="info">
                 <p>Use the slider below to simulate a temperature increase and see how small changes in solar energy
                     affect wildfires, air quality, and health.</p>
-                <input type="range" id="temperature-slider" min="1" max="5" value="1">
-                <p>Temperature Change: <span id="temperature-value">1°C</span></p>
+                <input type="range" id="temperature-slider" min="0" max="5" value="0">
+                <p>Temperature Change: <span id="temperature-value">0°C</span></p>
                 <div id="effect-results">
                     <!-- The results of the API request will be shown here -->
                 </div>
@@ -123,9 +123,20 @@
         </div>
     </section>
 
+
+
     <section class="map-section" id="map-section">
         <h1>Select a Location</h1>
-        <div id="map" style="height: 400px;"></div>
+        <div id="map"></div>
+        <section style="width: 100%;" class="effect">
+            <div style="width: 100%;" class="container">
+                <div style="width: 100%;" class="info">
+                    <p>Wildfire Risk Percentage:</p>
+                    <input style="width: 100%;" type="range" id="wildfire-percentage" min="0" max="100" value="0">
+                    <p>Selected Wildfire Risk: <span id="wildfire-value">0%</span></p>
+                </div>
+            </div>
+        </section>
         <form id="locationForm">
             <input type="hidden" id="latitude" name="latitude">
             <input type="hidden" id="longitude" name="longitude">
@@ -181,25 +192,25 @@
         <h1>Meet Our Team</h1>
         <div class="container">
             <a href="https://www.linkedin.com/in/lulwa-almuraisi-98373a253/" target="_blank" class="team-member">
-                <img src="images/team1.jpg" alt="Team Member">
+                <img style="height: 300px; width:300px;" src="images/team_member.png" alt="Team Member">
                 <h3>Lulwa Almuraisi</h3>
                 <p>Senior Electrical Engineering student at Bahrain Polytechnic, with a strong focus on innovative
                     solutions and practical applications in the field.</p>
             </a>
             <a href="https://www.linkedin.com/in/ShooqJanahi" target="_blank" class="team-member">
-                <img src="images/Shooq_Avatar.jpg" alt="Team Member">
+                <img style="height: 300px; width:300px;" src="images/Shooq_Avatar.jpg" alt="Team Member">
                 <h3>Shooq Janahi</h3>
                 <p>Senior Programming student at Bahrain Polytechnic, passionate about developing innovative software
                     solutions and exploring cutting-edge technologies.</p>
             </a>
             <a href="https://www.linkedin.com/in/batool-isa-768237240/" target="_blank" class="team-member">
-                <img src="images/team3.jpg" alt="Team Member">
+                <img style="height: 300px; width:300px;" src="images/team_member.png" alt="Team Member">
                 <h3>Batool Isa</h3>
                 <p>Senior Programming student at Bahrain Polytechnic, focused on developing innovative software
                     solutions and enhancing user experiences through technology.</p>
             </a>
             <a href="https://www.linkedin.com/in/lena-garcia" target="_blank" class="team-member">
-                <img src="images/team3.jpg" alt="Team Member">
+                <img style="height: 300px; width:300px;" src="images/team_member.png" alt="Team Member">
                 <h3>Mohammed Aljazeeri</h3>
                 <p>2nd-year Bachelor of Mechanical Engineering student at Bahrain Polytechnic, currently pursuing a
                     diploma in Full Stack development at Reboot, blending technical engineering expertise with
@@ -207,15 +218,11 @@
             </a>
 
             <a href="https://www.linkedin.com/in/fares-yusuf/" target="_blank" class="team-member">
-                <img src="images/team3.jpg" alt="Team Member">
+                <img style="height: 300px; width:300px;" src="images/Fares_Avatar.png" alt="Team Member">
                 <h3>Fares Yusuf</h3>
-                <p>2nd-year Bachelor of Mechanical Engineering student at Bahrain Polytechnic, currently pursuing a
-                    diploma in Full Stack development at Reboot, blending technical engineering expertise with
-                    cutting-edge programming skills.</p>
+                <p>Graduate 2024 - Bsc Information Technology from Middlesex University London, Majored in AI and
+                    Robotics, and currently working as a Software Engineer.</p>
             </a>
-
-
-
         </div>
     </section>
 
