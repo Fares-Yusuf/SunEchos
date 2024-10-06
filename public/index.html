@@ -16,6 +16,8 @@
         rel="stylesheet">
     <!-- ICONSCOUT CDN -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
     <!-- SWIPER JS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
@@ -69,25 +71,6 @@
     </section>
     <!-- ============================ END OF LANDING ============================-->
 
-    <section class="effect" id="effect">
-        <h1>How Does the Butterfly Effect Happen?</h1>
-        <div class="container">
-            <div class="info">
-                <p>Use the slider below to simulate a temperature increase and see how small changes in solar energy
-                    affect wildfires, air quality, and health.</p>
-                <input type="range" id="temperature-slider" min="1" max="5" value="1">
-                <p>Temperature Change: <span id="temperature-value">1°C</span></p>
-                <div id="effect-results">
-                    <!-- The results of the API request will be shown here -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-
-
     <section class="about" id="about">
         <h1>What is the Butterfly Effect?</h1>
         <div class="container">
@@ -125,6 +108,32 @@
             </div>
         </div>
     </section>
+    <section class="effect" id="effect">
+        <h1>How Does the Butterfly Effect Happen?</h1>
+        <div class="container">
+            <div class="info">
+                <p>Use the slider below to simulate a temperature increase and see how small changes in solar energy
+                    affect wildfires, air quality, and health.</p>
+                <input type="range" id="temperature-slider" min="1" max="5" value="1">
+                <p>Temperature Change: <span id="temperature-value">1°C</span></p>
+                <div id="effect-results">
+                    <!-- The results of the API request will be shown here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section" id="map-section">
+        <h1>Select a Location</h1>
+        <div id="map" style="height: 400px;"></div>
+        <form id="locationForm">
+            <input type="hidden" id="latitude" name="latitude">
+            <input type="hidden" id="longitude" name="longitude">
+            <button type="submit" class="btn btn-primary">Submit Location</button>
+        </form>
+        <div id="locationResult"></div>
+    </section>
+
     <!-- ============================ END OF BUTTERFLY EFFECT =============================-->
 
     <section class="data" id="data">

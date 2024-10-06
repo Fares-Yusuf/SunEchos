@@ -104,3 +104,95 @@ slider.addEventListener("input", async function () {
         effectResults.innerHTML = "<p>Failed to load ripple effects.</p>";
     }
 });
+// Initialize the map
+const map = L.map("map").setView([26.2235, 50.5876], 10); // Default to Manama, Bahrain
+
+// Add tile layer to the map (OpenStreetMap)
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: "© OpenStreetMap contributors",
+}).addTo(map);
+
+let marker; // To store the clicked location marker
+
+// Listen for map clicks
+map.on("click", function (e) {
+    const lat = e.latlng.lat;
+    const lon = e.latlng.lng;
+
+    // Update the hidden form fields
+    document.getElementById("latitude").value = lat;
+    document.getElementById("longitude").value = lon;
+
+    // Add or move marker to the clicked location
+    if (marker) {
+        marker.setLatLng(e.latlng);
+    } else {
+        marker = L.marker(e.latlng).addTo(map);
+    }
+});
+
+let currentAirQuality = null; // To store the current air quality (before change)
+let simulatedAirQuality = null; // To store the simulated air quality (after change)
+
+// Handle form submission
+document
+    .getElementById("locationForm")
+    .addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const lat = document.getElementById("latitude").value;
+        const lon = document.getElementById("longitude").value;
+        const wildfireRiskPercentage = document.getElementById(
+            "wildfire-percentage"
+        ).value; // Get the wildfire percentage
+
+        // Step 1: Fetch the current air quality (before)
+        try {
+            const response = await fetch("/api/air-quality", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    lat: lat,
+                    lon: lon,
+                    wildfireRiskPercentage: 0, // Use 0 for the "before" state (no wildfire effect)
+                }),
+            });
+
+            const data = await response.json();
+            currentAirQuality = data.airQuality;
+
+            // Step 2: Fetch the simulated air quality (after)
+            const afterResponse = await fetch("/api/air-quality", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    lat: lat,
+                    lon: lon,
+                    wildfireRiskPercentage: wildfireRiskPercentage, // Use the entered wildfire risk percentage
+                }),
+            });
+
+            const afterData = await afterResponse.json();
+            simulatedAirQuality = afterData.airQuality;
+
+            // Step 3: Display both before and after values
+            document.getElementById("locationResult").innerHTML = `
+        <h3>Air Quality Data:</h3>
+        <ul>
+            <li><strong>Latitude:</strong> ${lat}</li>
+            <li><strong>Longitude:</strong> ${lon}</li>
+            <li><strong>Current Air Quality (Before):</strong> ${currentAirQuality}</li>
+            <li><strong>Simulated Air Quality (After):</strong> ${simulatedAirQuality}</li>
+            <li><strong>Wildfire Risk Level:</strong> ${wildfireRiskPercentage}%</li>
+        </ul>
+    `;
+        } catch (error) {
+            console.error("Error fetching data:", error);
+            document.getElementById("locationResult").innerHTML =
+                "<p>Failed to fetch air quality data.</p>";
+        }
+    });
