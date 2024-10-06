@@ -91,7 +91,7 @@ slider.addEventListener("input", async function () {
     try {
         const response = await fetch(`/api/solar-effect?temp=${tempChange}`);
         const data = await response.json();
-
+        console.log(data.img);
         // Update the effect results with the API response
         effectResults.innerHTML = `
       <h3>Ripple Effects:</h3>
@@ -100,6 +100,7 @@ slider.addEventListener("input", async function () {
         <li><strong>Wildfire Risk:</strong> ${data.wildfireRisk}</li>
         <li><strong>Air Quality:</strong> ${data.airQuality}</li>
         <li><strong>Health Impact:</strong> ${data.healthImpact}</li>
+        <img src="${data.img}" alt="burn">
       </ul>
     `;
     } catch (error) {

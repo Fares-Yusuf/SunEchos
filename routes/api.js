@@ -8,12 +8,43 @@ router.get("/solar-effect", (req, res) => {
     const wildfireRisk = calculateWildfireRisk(temperatureChange);
     const airQuality = calculateAirQuality(wildfireRisk);
     const healthImpact = calculateHealthImpact(airQuality);
+    let img = "";
+    console.log(img);
+    if (temperatureChange > "0") {
+        if (temperatureChange >= 1 && temperatureChange < 2) {
+            img =
+                "https://images.theconversation.com/files/603133/original/file-20240626-19-edcvz.jpg?ixlib=rb-4.1.0&q=20&auto=format&w=320&fit=clip&dpr=2&usm=12&cs=strip";
+        }
+        if (temperatureChange >= 2 && temperatureChange <= 4) {
+            img =
+                "https://insideclimatenews.org/wp-content/uploads/2023/03/wildfire_thibaud-mortiz-afp-getty-scaled.jpg";
+        }
+        if (temperatureChange == 5) {
+            img =
+                "https://static01.nyt.com/images/2021/07/15/climate/00CLI-WILDFIRES-explainer1/merlin_190627818_41f0a3e1-8f27-41b2-a040-26d54c996e9b-superJumbo.jpg";
+        }
+    }
     res.json({
         temperatureChange: `${temperatureChange}°C`,
         wildfireRisk,
+        airQuality,
+        healthImpact,
+        img,
     });
 });
+// Simulate air quality deterioration based on wildfire risk
+function calculateAirQuality(wildfireRisk) {
+    if (wildfireRisk === "High") return "Poor";
+    if (wildfireRisk === "Medium") return "Moderate";
+    return "Good";
+}
 
+// Simulate health impact based on air quality
+function calculateHealthImpact(airQuality) {
+    if (airQuality === "Poor") return "Respiratory issues likely";
+    if (airQuality === "Moderate") return "Some discomfort";
+    return "Minimal impact";
+}
 // Simulate wildfire risk calculation based on temperature increase
 function calculateWildfireRisk(tempChange) {
     if (tempChange >= 4) return "High";
