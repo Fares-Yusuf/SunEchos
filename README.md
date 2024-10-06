@@ -8,7 +8,7 @@ It also integrates with the Meteomatics API to fetch real-time air quality data 
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (version 12 or higher)
+- [Node.js](https://nodejs.org/) (version 20 or higher)
 - [npm](https://www.npmjs.com/)
 
 ### Installation
