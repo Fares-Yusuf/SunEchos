@@ -225,6 +225,7 @@
 
 
     <!-- Chatbot Integration -->
+  
     <style>
         /* Chat container is hidden by default */
         .chat-container {
@@ -339,6 +340,9 @@
         const chatContainer = document.getElementById('chat-container');
         const chatBox = document.getElementById("chat-box");
         const userInput = document.getElementById("user-input");
+
+        // Chat container is hidden (minimized) by default
+        chatContainer.style.display = "none";
 
         // Function to toggle the chat visibility
         function toggleChat() {
